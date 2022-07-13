@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.content-wrap {
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 210mm ;
+  height: 148.5mm;
+  background-color: #eaeaea;
+  font-size: 0.65em;
+}
+
+.grayscale-logo{
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+
+.fs-cstm {
+  font-size: 1.2em;
+}
