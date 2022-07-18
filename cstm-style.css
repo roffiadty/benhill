@@ -11,8 +11,15 @@
 	margin: 0 auto;
 	max-width: 210mm;
 	height: 148.5mm;
-	background-color: #eaeaea;
 	font-size: 0.65em;
+}
+
+.content-wrapper {
+	padding: 1.2rem;
+	width: 100%;
+	font-size: 0.9em;
+	background-color: #000000;
+	height: 100vh;
 }
 
 .grayscale-logo {

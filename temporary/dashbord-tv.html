@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap v5.0 -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <!-- custom css -->
+  <link rel="stylesheet" href="../cstm-style.css">
+  <title>Dashboard TV</title>
+</head>
+<body>
+<!-- start content wrapper -->
+<div class="content-wrapper">
+  <div class="card bg-dark text-light h-100">
+    <div class="card-body">
+      <h3 class="card-title">Data Monitoring Surat Jalan</h3>
+      <div class="row align-items-center">
+        <div class="col-4">
+            <div class="card bg-light mt-5 h-100">
+              <!-- start chart bar -->
+              <canvas id="barChart" style="height: 34rem;">
+                <div id="barJanuari">
+                  <!-- replace 20 to actual data -->
+                  20
+                </div>
+                <div id="barFebruari">
+                <!-- replace 45 to actual data -->
+                45
+              </div>
+              <div id="barMaret">
+                <!-- replace 30 to actual data -->
+                30
+              </div>
+              <div id="barApril">
+                <!-- replace 60 to actual data -->
+                60
+              </div>
+              <div id="barMei">
+                <!-- replace 83 to actual data -->
+                83
+              </div>
+              <div id="barJuni">
+                <!-- replace 15 to actual data -->
+                15
+              </div>
+              <div id="barJuli">
+                <!-- replace 50 to actual data -->
+                50
+              </div>
+              <div id="barAgustus">
+                <!-- replace 85 to actual data -->
+                85
+              </div>
+              <div id="barSeptember">
+                <!-- replace 30 to actual data -->
+                30
+              </div>
+              <div id="barOktober">
+                <!-- replace 100 to actual data -->
+                100
+              </div>
+              <div id="barNovember">
+                <!-- replace 75 to actual data -->
+                75
+              </div>
+              <div id="barDesember">
+                <!-- replace 92 to actual data -->
+                92
+              </div>
+            </canvas>
+            <!-- end chart bar -->
+          </div>
+        </div>
+
+        <div class="col-8">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-9">
+              </div>
+              <div class="col-3">
+                <div class="row">
+                  <div class="col-12">
+                    <!-- start search bar -->
+                    <label for="search-data" class="form-label fs-6 fw-bold">Search</label>
+                  </div>
+                  <div class="col-12">
+                    <input type="text" class="form-control" id="search-data">
+                  </div>
+                  <!-- end search bar -->
+                </div>
+              </div>
+            </div>
+
+            <!-- start table surat jalan -->
+            <div class="table-responsive">
+              <table class="table border text-light mt-3">
+                <thead>
+                  <tr class="border-2 border-light text-center align-middle fs-6">
+                    <th scope="col" class="border-2 border-light py-0">No.</th>
+                    <th scope="col" class="border-2 border-light py-0">No. WO</th>
+                    <th scope="col" class="border-2 border-light py-0">Kode Bundel</th>
+                    <th scope="col" class="border-2 border-light py-0">Artikel</th>
+                    <th scope="col" class="border-2 border-light py-0">Nama barang</th>
+                    <th scope="col" class="border-2 border-light py-0">Bundel<br>(bdl)</th>
+                    <th scope="col" class="border-2 border-light py-0">Total<br>(pcs)</th>
+                    <th scope="col" class="border-2 border-light py-0">Ratio</th>
+                    <th scope="col" class="border-2 border-light py-0">Tanggal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-2 border-light text-center align-middle fs-6">
+                    <th scope="col" class="border-2 border-light px-0">1</th>
+                    <td class="border-2 border-light px-0">WO2206-00541</td>
+                    <td class="border-2 border-light px-0">S21512N1503</td>
+                    <td class="border-2 border-light px-0">23219-32523</td>
+                    <td class="border-2 border-light px-0">CELANA PANJANG CHINOS</td>
+                    <td class="border-2 border-light px-0">1</td>
+                    <td class="border-2 border-light px-0">1</td>
+                    <td class="border-2 border-light px-0">27B : 27 = 1</td>
+                    <td class="border-2 border-light px-0">6 July 2022</td>
+                  </tr>
+                  <tr class="border-2 border-light text-center align-middle fs-6">
+                    <th scope="col" class="border-2 border-light px-0">2</th>
+                    <td class="border-2 border-light px-0">WO2206-00541</td>
+                    <td class="border-2 border-light px-0">S21512N1503</td>
+                    <td class="border-2 border-light px-0">23219-32523</td>
+                    <td class="border-2 border-light px-0">CELANA PANJANG CHINOS</td>
+                    <td class="border-2 border-light px-0">1</td>
+                    <td class="border-2 border-light px-0">1</td>
+                    <td class="border-2 border-light px-0">27B : 27 = 1</td>
+                    <td class="border-2 border-light px-0">6 July 2022</td>
+                  </tr>
+                  <tr class="border-2 border-light text-center align-middle fs-6">
+                    <th scope="col" class="border-2 border-light px-0">3</th>
+                    <td class="border-2 border-light px-0">WO2206-00541</td>
+                    <td class="border-2 border-light px-0">S21512N1503</td>
+                    <td class="border-2 border-light px-0">23219-32523</td>
+                    <td class="border-2 border-light px-0">CELANA PANJANG CHINOS</td>
+                    <td class="border-2 border-light px-0">1</td>
+                    <td class="border-2 border-light px-0">1</td>
+                    <td class="border-2 border-light px-0">27B : 27 = 1</td>
+                    <td class="border-2 border-light px-0">6 July 2022</td>
+                  </tr>
+                  <tr class="border-2 border-light text-center align-middle fs-6">
+                    <th scope="col" class="border-2 border-light px-0">4</th>
+                    <td class="border-2 border-light px-0">WO2206-00541</td>
+                    <td class="border-2 border-light px-0">S21512N1503</td>
+                    <td class="border-2 border-light px-0">23219-32523</td>
+                    <td class="border-2 border-light px-0">CELANA PANJANG CHINOS</td>
+                    <td class="border-2 border-light px-0">1</td>
+                    <td class="border-2 border-light px-0">1</td>
+                    <td class="border-2 border-light px-0">27B : 27 = 1</td>
+                    <td class="border-2 border-light px-0">6 July 2022</td>
+                  </tr>
+                  <tr class="border-2 border-light text-center align-middle fs-6">
+                    <th scope="col" class="border-2 border-light px-0">5</th>
+                    <td class="border-2 border-light px-0">WO2206-00541</td>
+                    <td class="border-2 border-light px-0">S21512N1503</td>
+                    <td class="border-2 border-light px-0">23219-32523</td>
+                    <td class="border-2 border-light px-0">CELANA PANJANG CHINOS</td>
+                    <td class="border-2 border-light px-0">1</td>
+                    <td class="border-2 border-light px-0">1</td>
+                    <td class="border-2 border-light px-0">27B : 27 = 1</td>
+                    <td class="border-2 border-light px-0">6 July 2022</td>
+                  </tr>
+                  
+                  
+                </tbody>
+              </table>
+            </div>
+            <!-- end table surat jalan -->
+
+            <div class="row">
+              <!-- start showing entries -->
+              <div class="col-11">
+                <div class="card w-50 bg-light">
+                    <div class="card-body text-center text-secondary fs-6 fw-bold py-2">Showing 1 to 5 of 5 entries</div>
+                  </div>
+                </div>
+                <!-- end showing entries -->
+
+                <!-- start Previous and Next button -->
+                <div class="col-1">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                      <li class="page-item disabled">
+                        <a class="page-link py-2 fs-6" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                      </li>
+                      <li class="page-item"><a class="page-link py-2 fs-6 fw-bold" href="#">1</a></li>
+                      <li class="page-item">
+                        <a class="page-link py-2 fs-6" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <!-- end Previous and Next button -->
+              </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- end content wrapper -->
+
+<!-- library chart js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../assets/chartjs/chart.js"></script>
+<!-- end library chart js -->
+
+<!-- start script bootstrap 5 -->
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<!-- end script bootstrap 5 -->
+</body>
+</html>
