@@ -56,7 +56,9 @@ const config = {
   options: {},
 }
 
-Chart.defaults.font.size = 15;
+Chart.defaults.font.size = 15
+Chart.defaults.color = "#eaeaea"
+Chart.defaults.borderColor = "#6c757d"
 const myChart = new Chart(
   document.getElementById('barChart'),
   config
