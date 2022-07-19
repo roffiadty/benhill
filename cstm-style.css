@@ -19,7 +19,12 @@
 	width: 100%;
 	font-size: 0.9em;
 	background-color: #000000;
-	height: 100vh;
+	height: 100%;
+}
+
+.bg-black-accsent {
+	background-color: #191c24 !important;
+	border-color: #191c24 !important;
 }
 
 .grayscale-logo {
