@@ -1,8 +1,11 @@
 <?php require "connect_db.php" ;?>
-<?php $result = mysqli_query($koneksi, "SELECT * FROM surat_jalan"); ?>
-<?php if( !$result ) {
-  echo mysqli_error($koneksi);
-} ?>
+
+<?php
+// checking erorr connect db
+// if( !$result ) {
+// echo mysqli_error($koneksi);
+// } 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,26 +31,29 @@
             <div class="card bg-black-accsent mt-5 h-100">
               <!-- start chart bar -->
               <canvas id="barChart" style="height: 36rem;">
-
+              <?php $chart_conn = mysqli_query($koneksi, "SELECT * FROM surat_jalan"); ?>
+              <?php while( $chart_total = mysqli_fetch_assoc($chart_conn) ) : ?>
+                <?php $id_ttl[]=$chart_total["total"] ;?>
+              <?php endwhile ;?>
               <div id="barJanuari">
                 <!-- replace 20 to actual data -->
-              20
+                <?php echo $id_ttl[0] ;?>
               </div>
               <div id="barFebruari">
                 <!-- replace 45 to actual data -->
-              45
+                <?php echo $id_ttl[1] ;?>
               </div>
               <div id="barMaret">
                 <!-- replace 30 to actual data -->
-              30
+                <?php echo $id_ttl[2] ;?>
               </div>
               <div id="barApril">
                 <!-- replace 60 to actual data -->
-              60
+                <?php echo $id_ttl[3] ;?>
               </div>
               <div id="barMei">
                 <!-- replace 83 to actual data -->
-              83
+                <?php echo $id_ttl[4] ;?>
               </div>
               <div id="barJuni">
                 <!-- replace 15 to actual data -->
@@ -120,7 +126,11 @@
                 </thead>
                 <tbody>
                   <?php $i=1 ;?>
+                  <?php $result = mysqli_query($koneksi, "SELECT * FROM surat_jalan"); ?>
                   <?php while ( $srt_jln = mysqli_fetch_assoc($result) ) : ;?>
+                  <?php $tanggal = $srt_jln["tanggal"] ;?>
+                  <?php $tgl = date_create($tanggal) ;?>
+                  <?php $date_formated = date_format($tgl, 'd F Y') ;?>
                   <tr class="border-2 border-light text-center align-middle">
                     <th class="border-2 border-light text-center align-middle fs-6 px-0"><?php echo $i ;?></th>
                     <td class="border-2 border-light px-0"><?php echo $srt_jln["no_wo"] ;?></td>
@@ -130,7 +140,7 @@
                     <td class="border-2 border-light px-0"><?php echo $srt_jln["bundel"] ;?></td>
                     <td class="border-2 border-light px-0"><?php echo $srt_jln["total"] ;?></td>
                     <td class="border-2 border-light px-0"><?php echo $srt_jln["ratio"] ;?></td>
-                    <td class="border-2 border-light px-0"><?php echo $srt_jln["tanggal"] ;?></td>
+                    <td class="border-2 border-light px-0"><?php echo $date_formated ;?></td>
                   </tr>
                   <?php $i++ ;?>
                   <?php endwhile ;?>
@@ -143,7 +153,10 @@
               <!-- start showing entries -->
               <div class="col-11">
                 <div class="card w-50 bg-black-accsent">
-                    <div class="card-body text-light text-center fs-6 fw-bold py-2">Showing 1 to 5 of 5 entries</div>
+                  <?php $entries = mysqli_query($koneksi, "SELECT * FROM surat_jalan"); ?>
+                  <?php $jml_entries=mysqli_num_rows($entries) ;?>
+                  <div class="card-body text-light text-center fs-6 fw-bold py-2">
+                      Showing 1 to 5 of <?php echo $jml_entries ;?> entries</div>
                   </div>
                 </div>
                 <!-- end showing entries -->
