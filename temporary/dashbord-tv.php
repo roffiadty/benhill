@@ -31,57 +31,96 @@
             <div class="card bg-black-accsent mt-5 h-100">
               <!-- start chart bar -->
               <canvas id="barChart" style="height: 36rem;">
-              <?php $chart_conn = mysqli_query($koneksi, "SELECT * FROM surat_jalan"); ?>
-              <?php while( $chart_total = mysqli_fetch_assoc($chart_conn) ) : ?>
-                <?php $id_ttl[]=$chart_total["total"] ;?>
-              <?php endwhile ;?>
+              <?php $chart_connn = mysqli_query($koneksi, "SELECT * FROM surat_jalan"); ?>
+              <?php while( $chart_date = mysqli_fetch_assoc($chart_connn) ) : ?>
+                <?php $chart_dates=$chart_date["tanggal"] ;?>
+                <?php $chart_dates_formated=date_create($chart_dates) ;?>
+                <?php $chrt_dts_formated=date_format($chart_dates_formated, 'F') ;?>
+                <?php if($chrt_dts_formated=="January") {
+                  $januari[]=$chrt_dts_formated;
+                  $total_januari=count($januari);
+                } ;?>
+                <?php if($chrt_dts_formated=="February") {
+                  $februari[]=$chrt_dts_formated;
+                  $total_februari=count($februari);
+                } ;?>
+                <?php if($chrt_dts_formated=="March") {
+                  $maret[]=$chrt_dts_formated;
+                  $total_maret=count($maret);
+                } ;?>
+                <?php if($chrt_dts_formated=="April") {
+                  $april[]=$chrt_dts_formated;
+                  $total_april=count($april);
+                } ;?>
+                <?php if($chrt_dts_formated=="May") {
+                  $mei[]=$chrt_dts_formated;
+                  $total_mei=count($mei);
+                } ;?>
+                <?php if($chrt_dts_formated=="June") {
+                  $juni[]=$chrt_dts_formated;
+                  $total_juni=count($juni);
+                } ;?>
+                <?php if($chrt_dts_formated=="July") {
+                  $juli[]=$chrt_dts_formated;
+                  $total_juli=count($juli);
+                } ;?>
+                <?php if($chrt_dts_formated=="August") {
+                  $agustus[]=$chrt_dts_formated;
+                  $total_agustus=count($agustus);
+                } ;?>
+                <?php if($chrt_dts_formated=="September") {
+                  $september[]=$chrt_dts_formated;
+                  $total_september=count($september);
+                } ;?>
+                <?php if($chrt_dts_formated=="October") {
+                  $oktober[]=$chrt_dts_formated;
+                  $total_oktober=count($oktober);
+                } ;?>
+                <?php if($chrt_dts_formated=="November") {
+                  $november[]=$chrt_dts_formated;
+                  $total_november=count($november);
+                } ;?>
+                <?php if($chrt_dts_formated=="December") {
+                  $desember[]=$chrt_dts_formated;
+                  $total_desember=count($desember);
+                } ;?>
+                <?php endwhile ;?>
+
               <div id="barJanuari">
-                <!-- replace 20 to actual data -->
-                <?php echo $id_ttl[0] ;?>
+                <?php echo $total_januari ;?>
               </div>
               <div id="barFebruari">
-                <!-- replace 45 to actual data -->
-                <?php echo $id_ttl[1] ;?>
+                <?php echo $total_februari ;?>
               </div>
               <div id="barMaret">
-                <!-- replace 30 to actual data -->
-                <?php echo $id_ttl[2] ;?>
+                <?php echo $total_maret ;?>
               </div>
               <div id="barApril">
-                <!-- replace 60 to actual data -->
-                <?php echo $id_ttl[3] ;?>
+                <?php echo $total_april ;?>
               </div>
               <div id="barMei">
-                <!-- replace 83 to actual data -->
-                <?php echo $id_ttl[4] ;?>
+                <?php echo $total_mei ;?>
               </div>
               <div id="barJuni">
-                <!-- replace 15 to actual data -->
-              15
+                <?php echo $total_juni ;?>
               </div>
               <div id="barJuli">
-                <!-- replace 50 to actual data -->
-              50
+                <?php echo $total_juli ;?>
               </div>
               <div id="barAgustus">
-                <!-- replace 85 to actual data -->
-              85
+                <?php echo $total_agustus ;?>
               </div>
               <div id="barSeptember">
-                <!-- replace 30 to actual data -->
-              30
+                <?php echo $total_september ;?>
               </div>
               <div id="barOktober">
-                <!-- replace 100 to actual data -->
-              100
+                <?php echo $total_oktober ;?>
               </div>
               <div id="barNovember">
-                <!-- replace 75 to actual data -->
-              75
+                <?php echo $total_november ;?>
               </div>
               <div id="barDesember">
-                <!-- replace 92 to actual data -->
-              92
+                <?php echo $total_desember ;?>
               </div>
             </canvas>
             <!-- end chart bar -->
@@ -126,24 +165,25 @@
                 </thead>
                 <tbody>
                   <?php $i=1 ;?>
+                  <?php $x=$i ?>
                   <?php $result = mysqli_query($koneksi, "SELECT * FROM surat_jalan"); ?>
-                  <?php while ( $srt_jln = mysqli_fetch_assoc($result) ) : ;?>
-                  <?php $tanggal = $srt_jln["tanggal"] ;?>
-                  <?php $tgl = date_create($tanggal) ;?>
-                  <?php $date_formated = date_format($tgl, 'd F Y') ;?>
-                  <tr class="border-2 border-light text-center align-middle">
-                    <th class="border-2 border-light text-center align-middle fs-6 px-0"><?php echo $i ;?></th>
-                    <td class="border-2 border-light px-0"><?php echo $srt_jln["no_wo"] ;?></td>
-                    <td class="border-2 border-light px-0"><?php echo $srt_jln["kode_bundel"] ;?></td>
-                    <td class="border-2 border-light px-0"><?php echo $srt_jln["no_artikel"] ;?></td>
-                    <td class="border-2 border-light px-0"><?php echo $srt_jln["nama_barang"] ;?></td>
-                    <td class="border-2 border-light px-0"><?php echo $srt_jln["bundel"] ;?></td>
-                    <td class="border-2 border-light px-0"><?php echo $srt_jln["total"] ;?></td>
-                    <td class="border-2 border-light px-0"><?php echo $srt_jln["ratio"] ;?></td>
-                    <td class="border-2 border-light px-0"><?php echo $date_formated ;?></td>
-                  </tr>
-                  <?php $i++ ;?>
-                  <?php endwhile ;?>
+                  <?php $srt_jln=0; for($srt_jln; $srt_jln < 5; $srt_jln++) {
+                    $dt_srt_jln = mysqli_fetch_assoc($result);
+                    $data_tanggal = $dt_srt_jln["tanggal"];
+                    $dt_tgl = date_create($data_tanggal);
+                    $date_formated = date_format($dt_tgl, 'd F Y');
+                    echo '<tr class="border-2 border-light text-center align-middle">';
+                    echo '<td class="border-2 border-light text-center align-middle fs-6 px-0">'.$i.'</td>';
+                    echo '<td class="border-2 border-light px-0">'.$dt_srt_jln["no_wo"].'</td>';
+                    echo '<td class="border-2 border-light px-0">'.$dt_srt_jln["kode_bundel"].'</td>';
+                    echo '<td class="border-2 border-light px-0">'.$dt_srt_jln["no_artikel"].'</td>';
+                    echo '<td class="border-2 border-light px-0">'.$dt_srt_jln["nama_barang"].'</td>';
+                    echo '<td class="border-2 border-light px-0">'.$dt_srt_jln["bundel"].'</td>';
+                    echo '<td class="border-2 border-light px-0">'.$dt_srt_jln["total"].'</td>';
+                    echo '<td class="border-2 border-light px-0">'.$dt_srt_jln["ratio"].'</td>';
+                    echo '<td class="border-2 border-light px-0">'.$date_formated.'</td>';
+                  $i++;
+                  };?>
                 </tbody>
                 </table>
               </div>
@@ -156,7 +196,7 @@
                   <?php $entries = mysqli_query($koneksi, "SELECT * FROM surat_jalan"); ?>
                   <?php $jml_entries=mysqli_num_rows($entries) ;?>
                   <div class="card-body text-light text-center fs-6 fw-bold py-2">
-                      Showing 1 to 5 of <?php echo $jml_entries ;?> entries</div>
+                      Showing <?php echo $x ;?> to <?php echo $srt_jln ;?> of <?php echo $jml_entries ;?> entries</div>
                   </div>
                 </div>
                 <!-- end showing entries -->
