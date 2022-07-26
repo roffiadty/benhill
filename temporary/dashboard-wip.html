@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dashboard WIP</title>
+		<!-- bootstrap v5.0 -->
+		<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+		<!-- custom css -->
+		<link rel="stylesheet" href="../cstm-style.css" />
+	</head>
+	<body>
+		<div class="content-wrapper">
+			<div class="row">
+				<div class="col-6">
+					<!-- chart dashboard total wip START -->
+					<div class="card bg-dark">
+						<div class="card-body">
+							<canvas id="barDashboardWIP1">
+								<div id="wip-factory">35000</div>
+								<div id="wip-gudang">25000</div>
+								<div id="wip-store">15000</div>
+							</canvas>
+						</div>
+					</div>
+					<!-- chart dashboard total wip END -->
+
+					<div class="row">
+						<div class="col-9">
+							<!-- table article WIP START -->
+							<div class="card mt-3 bg-dark">
+								<div class="card-body pb-0">
+									<div class="table-responsive">
+										<table class="table table-dark table-hover border-light text-center text-white fs-6">
+											<thead>
+												<tr>
+													<th scope="col" class="border-2 bg-secondary">ARTICLE</th>
+													<th scope="col" class="border-2 bg-secondary">WIP FACTORY</th>
+													<th scope="col" class="border-2 bg-secondary">WIP GUDANG</th>
+													<th scope="col" class="border-2 bg-secondary">WIP STORE</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="border-2 p-1">asdasd</td>
+													<td class="border-2 p-1">123456</td>
+													<td class="border-2 p-1">123456</td>
+													<td class="border-2 p-1">123456</td>
+												</tr>
+												<tr>
+													<td class="border-2 p-1">asdasd</td>
+													<td class="border-2 p-1">123456</td>
+													<td class="border-2 p-1">123456</td>
+													<td class="border-2 p-1">123456</td>
+												</tr>
+												<tr>
+													<td class="border-2 p-1">asdasd</td>
+													<td class="border-2 p-1">123456</td>
+													<td class="border-2 p-1">123456</td>
+													<td class="border-2 p-1">123456</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- table article WIP END -->
+
+									<!-- table article WIP TOTAL START -->
+									<div class="table-responsive">
+										<table class="table mt-3 table-dark table-hover border-light text-center text-white fs-6">
+											<thead>
+												<tr>
+													<th scope="col" class="border-2 bg-secondary">ARTICLE</th>
+													<th scope="col" class="border-2 bg-secondary">WIP FACTORY</th>
+													<th scope="col" class="border-2 bg-secondary">WIP GUDANG</th>
+													<th scope="col" class="border-2 bg-secondary">WIP STORE</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="col" class="border-2 p-1">TOTAL</th>
+													<th scope="col" class="border-2 p-1">123456</th>
+													<th scope="col" class="border-2 p-1">123456</th>
+													<th scope="col" class="border-2 p-1">123456</th>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- table article WIP TOTAL END -->
+								</div>
+							</div>
+						</div>
+
+						<div class="col-3">
+							<!-- table article START -->
+							<div class="card bg-dark mt-3">
+								<div class="card-body pb-0">
+									<div class="table-responsive">
+										<table class="table table-dark table-hover border-light text-center text-white fs-6">
+											<thead>
+												<tr>
+													<th scope="col" class="border-2 bg-secondary">ARTICLE</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="border-2 p-1">asdasdasd</td>
+												</tr>
+												<tr>
+													<td class="border-2 p-1">asdasdasd</td>
+												</tr>
+												<tr>
+													<td class="border-2 p-1">asdasdasd</td>
+												</tr>
+												<tr>
+													<td class="border-2 p-1">asdasdasd</td>
+												</tr>
+												<tr>
+													<td class="border-2 p-1">asdasdasd</td>
+												</tr>
+												<tr>
+													<td class="border-2 p-1">asdasdasd</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- table article END -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<!-- chart dashboard per article per WIP START -->
+					<div class="card bg-dark">
+						<div class="card-body">
+							<canvas id="barDashboardWIP2" height="280"> 
+
+              </canvas>
+						</div>
+					</div>
+					<!-- chart dashboard per article per WIP END -->
+				</div>
+			</div>
+		</div>
+
+		<!-- library chart js -->
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="../assets/chartjs/dashboard-wip.js"></script>
+		<!-- end library chart js -->
+
+		<!-- start script bootstrap 5 -->
+		<script src="../assets/js/bootstrap.bundle.min.js"></script>
+		<!-- end script bootstrap 5 -->
+	</body>
+</html>
